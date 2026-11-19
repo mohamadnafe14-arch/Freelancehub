@@ -62,7 +62,6 @@ key.properties
 .pub/
 /build/
 /coverage/
-lib/core/config/supabase_client_config.dart
 
 # Symbolication related
 app.*.symbols
