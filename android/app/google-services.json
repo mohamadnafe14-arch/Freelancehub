@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "288228711775",
+    "project_id": "e-commerce-app-75715",
+    "storage_bucket": "e-commerce-app-75715.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288228711775:android:b0a503f53bcb90803a6aea",
+        "android_client_info": {
+          "package_name": "com.example.freelancehub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288228711775-a62b764a271n1i38cds48rroqu13ejcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_1lb839WV_kYDzmSqAus9vTn1EocDO-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288228711775-a62b764a271n1i38cds48rroqu13ejcs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "288228711775-2h7gipmj8sbmb4fs7pkv35h8ad9vbacv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.queueFlow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

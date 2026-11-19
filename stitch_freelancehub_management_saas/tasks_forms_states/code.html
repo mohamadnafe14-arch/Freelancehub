@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks — Forms &amp; States — FreelanceHub</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-purple': '#6D5CE8',
+        'brand-purple-dark': '#8B7CF6',
+        'success': '#10B981',
+        'on-success': '#393939',
+        'warning': '#F59E0B',
+        'on-warning': '#0F172A',
+        'error': '#EF4444',
+        'on-error': '#1C1C1C',
+        'info': '#3B82F6',
+        'on-info': '#1E1E1E',
+        'light-background': '#F8FAFC',
+        'light-on-background': '#0F172A',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#0F172A',
+        'light-surface-subtle': '#F1F5F9',
+        'light-on-surface-subtle': '#627188',
+        'light-primary': '#6D5CE8',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#EEF2FF',
+        'light-on-primary-container': '#4338CA',
+        'light-border': '#E2E8F0',
+        'light-success-container': '#ECFDF5',
+        'light-on-success-container': '#065F46',
+        'light-warning-container': '#FFFBEB',
+        'light-on-warning-container': '#92400E',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-info-container': '#EFF6FF',
+        'light-on-info-container': '#1E40AF',
+        'dark-background': '#0F172A',
+        'dark-on-background': '#F8FAFC',
+        'dark-surface': '#1E293B',
+        'dark-on-surface': '#F8FAFC',
+        'dark-surface-subtle': '#283548',
+        'dark-on-surface-subtle': '#94A3B8',
+        'dark-primary': '#8B7CF6',
+        'dark-on-primary': '#0F172A',
+        'dark-primary-container': '#2E2759',
+        'dark-on-primary-container': '#DDD6FE',
+        'dark-border': '#334155',
+        'dark-success-container': '#064E3B',
+        'dark-on-success-container': '#A7F3D0',
+        'dark-warning-container': '#78350F',
+        'dark-on-warning-container': '#FDE68A',
+        'dark-error-container': '#7F1D1D',
+        'dark-on-error-container': '#FECACA',
+        'dark-info-container': '#1E3A8A',
+        'dark-on-info-container': '#BFDBFE',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '32px',
+        '3xl': '48px',
+      },
+      fontFamily: {
+        'display': ['"Wix Madefor Display"', 'sans-serif'],
+        'headline': ['"Wix Madefor Display"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['24px', { lineHeight: '32px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.15px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@500&amp;family=Wix+Madefor+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-background text-light-on-background dark:bg-dark-background dark:text-dark-on-background font-body antialiased">
+  <div class="min-h-[1024px] p-xl lg:p-2xl max-w-[1440px] mx-auto flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <header class="flex items-center justify-between gap-md pb-md border-b border-light-border dark:border-dark-border">
+      <div>
+        <span class="font-label text-label-sm text-light-primary dark:text-dark-primary" data-design-text-token="label-sm">TASKS · FORMS, CONFIRMATIONS &amp; STATES</span>
+        <h1 class="font-headline text-headline-lg mt-xs" data-design-text-token="headline-lg">Task Flows &amp; States</h1>
+      </div>
+      <button type="button" onclick="toggleTheme()" aria-label="Toggle theme" class="w-10 h-10 rounded bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border flex items-center justify-center text-light-on-surface-subtle dark:text-dark-on-surface-subtle">
+        <span class="material-symbols-outlined text-[20px]">contrast</span>
+      </button>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+      <!-- Create Task -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col gap-md">
+        <h2 class="font-headline text-headline-md" data-design-text-token="headline-md">Create Task</h2>
+        <label class="flex flex-col gap-xs">
+          <span class="font-label text-label-md" data-design-text-token="label-md">Task title</span>
+          <input type="text" placeholder="e.g. Prototype push notification states" class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+        </label>
+        <div class="grid grid-cols-3 gap-md">
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Project</span>
+            <select class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+              <option>Northstar Mobile v2</option>
+              <option>Brand Refresh 2.0</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Priority</span>
+            <select class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Due date</span>
+            <input type="date" value="2025-11-24" class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+          </label>
+        </div>
+        <div class="flex justify-end gap-sm pt-sm">
+          <button type="button" class="px-lg py-sm min-h-10 rounded border border-light-border dark:border-dark-border font-label text-label-lg" data-design-text-token="label-lg">Cancel</button>
+          <button type="button" class="px-lg py-sm min-h-10 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary font-label text-label-lg" data-design-text-token="label-lg">Add Task</button>
+        </div>
+      </section>
+
+      <!-- Edit Task -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col gap-md">
+        <div class="flex items-center justify-between">
+          <h2 class="font-headline text-headline-md" data-design-text-token="headline-md">Edit Task</h2>
+          <span class="font-label text-label-sm bg-light-error-container text-light-on-error-container dark:bg-dark-error-container dark:text-dark-on-error-container px-sm py-xs rounded-full" data-design-text-token="label-sm">Overdue</span>
+        </div>
+        <label class="flex flex-col gap-xs">
+          <span class="font-label text-label-md" data-design-text-token="label-md">Task title</span>
+          <input type="text" value="Finalize checkout flow screens" class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+        </label>
+        <div class="grid grid-cols-3 gap-md">
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Status</span>
+            <select class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+              <option>To Do</option>
+              <option selected>In Progress</option>
+              <option>Done</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Priority</span>
+            <select class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+              <option selected>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-xs">
+            <span class="font-label text-label-md" data-design-text-token="label-md">Due date</span>
+            <input type="date" value="2025-11-18" class="w-full min-h-10 px-md py-sm rounded bg-light-surface dark:bg-dark-background border border-light-border dark:border-dark-border text-body-md">
+          </label>
+        </div>
+        <div class="flex justify-end gap-sm pt-sm">
+          <button type="button" class="px-lg py-sm min-h-10 rounded border border-light-border dark:border-dark-border font-label text-label-lg" data-design-text-token="label-lg">Cancel</button>
+          <button type="button" class="px-lg py-sm min-h-10 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary font-label text-label-lg" data-design-text-token="label-lg">Save Task</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+      <!-- Task Completion Confirmation -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col justify-between gap-lg">
+        <div>
+          <span class="font-label text-label-sm bg-light-success-container text-light-on-success-container dark:bg-dark-success-container dark:text-dark-on-success-container px-sm py-xs rounded-full" data-design-text-token="label-sm">Completion</span>
+          <h3 class="font-title text-title-lg mt-md" data-design-text-token="title-lg">Task marked done</h3>
+          <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle mt-xs" data-design-text-token="body-sm">&#34;Finalize checkout flow screens&#34; was moved to Done. Project progress updated to 100% (4 of 4 tasks).</p>
+        </div>
+        <button type="button" class="w-full min-h-10 rounded border border-light-border dark:border-dark-border font-label text-label-md" data-design-text-token="label-md">Undo</button>
+      </section>
+
+      <!-- Task Deletion Confirmation -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col justify-between gap-lg">
+        <div>
+          <span class="font-label text-label-sm bg-light-error-container text-light-on-error-container dark:bg-dark-error-container dark:text-dark-on-error-container px-sm py-xs rounded-full" data-design-text-token="label-sm">Delete</span>
+          <h3 class="font-title text-title-lg mt-md" data-design-text-token="title-lg">Delete this task?</h3>
+          <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle mt-xs" data-design-text-token="body-sm">This permanently removes the task and its 3 subtasks.</p>
+        </div>
+        <div class="flex justify-end gap-sm">
+          <button type="button" class="px-md py-xs min-h-10 rounded border border-light-border dark:border-dark-border font-label text-label-md" data-design-text-token="label-md">Cancel</button>
+          <button type="button" class="px-md py-xs min-h-10 rounded bg-light-error-container text-light-on-error-container dark:bg-dark-error-container dark:text-dark-on-error-container font-label text-label-md" data-design-text-token="label-md">Delete</button>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col items-center text-center justify-center gap-md">
+        <div class="w-12 h-12 rounded-full bg-light-primary-container text-light-on-primary-container dark:bg-dark-primary-container dark:text-dark-on-primary-container flex items-center justify-center">
+          <span class="material-symbols-outlined text-[24px]">task_alt</span>
+        </div>
+        <div>
+          <h3 class="font-title text-title-lg" data-design-text-token="title-lg">No tasks yet</h3>
+          <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle mt-xs" data-design-text-token="body-sm">Break your projects into actionable tasks with due dates.</p>
+        </div>
+        <button type="button" class="px-lg py-sm min-h-10 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary font-label text-label-md" data-design-text-token="label-md">Add Task</button>
+      </section>
+
+      <!-- Loading + Error State -->
+      <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col justify-between gap-md">
+        <div class="flex flex-col gap-sm">
+          <span class="font-label text-label-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="label-sm">Loading &amp; Error</span>
+          <div class="h-4 w-5/6 rounded bg-light-surface-subtle dark:bg-dark-surface-subtle"></div>
+          <div class="h-3 w-1/2 rounded bg-light-surface-subtle dark:bg-dark-surface-subtle"></div>
+        </div>
+        <div class="p-md rounded bg-light-error-container text-light-on-error-container dark:bg-dark-error-container dark:text-dark-on-error-container flex items-center justify-between gap-sm">
+          <span class="font-body text-body-sm" data-design-text-token="body-sm">Sync failed</span>
+          <button type="button" class="font-label text-label-sm underline" data-design-text-token="label-sm">Retry</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('fh-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    }
+    (function initTheme() {
+      try { if (localStorage.getItem('fh-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+    })();
+  </script>
+
+
+</body></html>

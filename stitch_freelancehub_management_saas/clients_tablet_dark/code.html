@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients (Tablet) — FreelanceHub</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-purple': '#6D5CE8',
+        'brand-purple-dark': '#8B7CF6',
+        'success': '#10B981',
+        'on-success': '#393939',
+        'warning': '#F59E0B',
+        'on-warning': '#0F172A',
+        'error': '#EF4444',
+        'on-error': '#1C1C1C',
+        'info': '#3B82F6',
+        'on-info': '#1E1E1E',
+        'light-background': '#F8FAFC',
+        'light-on-background': '#0F172A',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#0F172A',
+        'light-surface-subtle': '#F1F5F9',
+        'light-on-surface-subtle': '#627188',
+        'light-primary': '#6D5CE8',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#EEF2FF',
+        'light-on-primary-container': '#4338CA',
+        'light-border': '#E2E8F0',
+        'light-success-container': '#ECFDF5',
+        'light-on-success-container': '#065F46',
+        'light-warning-container': '#FFFBEB',
+        'light-on-warning-container': '#92400E',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-info-container': '#EFF6FF',
+        'light-on-info-container': '#1E40AF',
+        'dark-background': '#0F172A',
+        'dark-on-background': '#F8FAFC',
+        'dark-surface': '#1E293B',
+        'dark-on-surface': '#F8FAFC',
+        'dark-surface-subtle': '#283548',
+        'dark-on-surface-subtle': '#94A3B8',
+        'dark-primary': '#8B7CF6',
+        'dark-on-primary': '#0F172A',
+        'dark-primary-container': '#2E2759',
+        'dark-on-primary-container': '#DDD6FE',
+        'dark-border': '#334155',
+        'dark-success-container': '#064E3B',
+        'dark-on-success-container': '#A7F3D0',
+        'dark-warning-container': '#78350F',
+        'dark-on-warning-container': '#FDE68A',
+        'dark-error-container': '#7F1D1D',
+        'dark-on-error-container': '#FECACA',
+        'dark-info-container': '#1E3A8A',
+        'dark-on-info-container': '#BFDBFE',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '32px',
+        '3xl': '48px',
+      },
+      fontFamily: {
+        'display': ['"Wix Madefor Display"', 'sans-serif'],
+        'headline': ['"Wix Madefor Display"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['24px', { lineHeight: '32px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.15px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@500&amp;family=Wix+Madefor+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-background text-light-on-background dark:bg-dark-background dark:text-dark-on-background font-body antialiased">
+  <div class="min-h-[1024px] flex" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Tablet Navigation Rail (72px) -->
+    <aside class="w-[72px] shrink-0 bg-light-surface dark:bg-dark-surface border-r border-light-border dark:border-dark-border min-h-[1024px] flex flex-col items-center justify-between py-lg" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="flex flex-col items-center gap-xl w-full">
+        <div class="w-10 h-10 rounded bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;">workspaces</span>
+        </div>
+        <nav aria-label="Primary navigation" class="flex flex-col items-center gap-sm w-full px-xs">
+          <a href="../dashboard-tablet/DashboardTablet.html" class="flex flex-col items-center justify-center gap-xs w-full py-sm rounded text-light-on-surface-subtle dark:text-dark-on-surface-subtle hover:bg-light-surface-subtle dark:hover:bg-dark-surface-subtle">
+            <span class="material-symbols-outlined text-[20px]">dashboard</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Home</span>
+          </a>
+          <a href="#clients" aria-current="page" class="flex flex-col items-center justify-center gap-xs w-full py-sm rounded bg-light-primary-container text-light-on-primary-container dark:bg-dark-primary-container dark:text-dark-on-primary-container">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;">group</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Clients</span>
+          </a>
+          <a href="../projects-tablet/ProjectsTablet.html" class="flex flex-col items-center justify-center gap-xs w-full py-sm rounded text-light-on-surface-subtle dark:text-dark-on-surface-subtle hover:bg-light-surface-subtle dark:hover:bg-dark-surface-subtle">
+            <span class="material-symbols-outlined text-[20px]">folder_open</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Projects</span>
+          </a>
+          <a href="../tasks-tablet/TasksTablet.html" class="relative flex flex-col items-center justify-center gap-xs w-full py-sm rounded text-light-on-surface-subtle dark:text-dark-on-surface-subtle hover:bg-light-surface-subtle dark:hover:bg-dark-surface-subtle">
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Tasks</span>
+            <span class="absolute top-1.5 right-3 w-2 h-2 rounded-full bg-light-primary dark:bg-dark-primary" aria-hidden="true"></span>
+          </a>
+          <a href="../finance-tablet/FinanceTablet.html" class="flex flex-col items-center justify-center gap-xs w-full py-sm rounded text-light-on-surface-subtle dark:text-dark-on-surface-subtle hover:bg-light-surface-subtle dark:hover:bg-dark-surface-subtle">
+            <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+            <span class="font-label text-label-sm" data-design-text-token="label-sm">Finance</span>
+          </a>
+        </nav>
+      </div>
+      <a href="../settings-tablet/SettingsTablet.html" aria-label="Settings" class="w-10 h-10 rounded flex items-center justify-center text-light-on-surface-subtle dark:text-dark-on-surface-subtle hover:bg-light-surface-subtle dark:hover:bg-dark-surface-subtle">
+        <span class="material-symbols-outlined text-[20px]">settings</span>
+      </a>
+    </aside>
+
+    <!-- Main Tablet Area -->
+    <div class="flex-1 min-w-0 flex flex-col">
+      <header class="sticky top-0 z-20 h-16 bg-light-surface dark:bg-dark-surface border-b border-light-border dark:border-dark-border px-xl flex items-center justify-between gap-md">
+        <div class="flex items-center gap-sm">
+          <span class="font-body text-body-md text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-md">Workspace</span>
+          <span class="material-symbols-outlined text-[16px] text-light-on-surface-subtle dark:text-dark-on-surface-subtle" aria-hidden="true">chevron_right</span>
+          <span class="font-title text-title-md" data-design-text-token="title-md">Clients</span>
+        </div>
+        <div class="flex items-center gap-sm">
+          <button type="button" onclick="toggleTheme()" aria-label="Toggle theme" class="inline-flex items-center justify-center w-10 h-10 rounded bg-light-surface text-light-on-surface-subtle border border-light-border dark:bg-dark-surface dark:text-dark-on-surface-subtle dark:border-dark-border">
+            <span class="material-symbols-outlined text-[20px]">contrast</span>
+          </button>
+          <a href="../notifications-tablet/NotificationsTablet.html" aria-label="Notifications" class="relative inline-flex items-center justify-center w-10 h-10 rounded bg-light-surface text-light-on-surface-subtle border border-light-border dark:bg-dark-surface dark:text-dark-on-surface-subtle dark:border-dark-border">
+            <span class="material-symbols-outlined text-[20px]">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-light-primary dark:bg-dark-primary" aria-hidden="true"></span>
+          </a>
+          <span class="w-8 h-8 rounded-full bg-light-primary-container text-light-on-primary-container dark:bg-dark-primary-container dark:text-dark-on-primary-container flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">AM</span>
+        </div>
+      </header>
+
+      <main class="flex-1 p-xl flex flex-col gap-xl">
+        <div class="flex flex-wrap items-center justify-between gap-md">
+          <div>
+            <h1 class="font-headline text-headline-lg" data-design-text-token="headline-lg">Clients</h1>
+            <p class="font-body text-body-md text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-md">4 total · 3 active relationships</p>
+          </div>
+          <button type="button" class="inline-flex items-center gap-xs px-lg py-sm min-h-10 rounded bg-light-primary text-light-on-primary dark:bg-dark-primary dark:text-dark-on-primary shrink-0">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">person_add</span>
+            <span class="font-label text-label-lg" data-design-text-token="label-lg">Add Client</span>
+          </button>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="flex flex-wrap items-center justify-between gap-md">
+          <label class="relative flex items-center flex-1 min-w-[200px]">
+            <span class="material-symbols-outlined text-[18px] text-light-on-surface-subtle dark:text-dark-on-surface-subtle absolute left-md pointer-events-none" aria-hidden="true">search</span>
+            <input type="search" placeholder="Search clients..." aria-label="Search clients" class="w-full min-h-10 pl-2xl pr-md py-xs rounded bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border text-body-md">
+          </label>
+          <div class="inline-flex items-center p-xs rounded bg-light-surface-subtle dark:bg-dark-surface-subtle border border-light-border dark:border-dark-border">
+            <button type="button" class="px-md py-xs rounded-sm bg-light-surface dark:bg-dark-surface shadow-sm font-label text-label-md" data-design-text-token="label-md">All</button>
+            <button type="button" class="px-md py-xs rounded-sm bg-transparent text-light-on-surface-subtle dark:text-dark-on-surface-subtle font-label text-label-md" data-design-text-token="label-md">Active</button>
+            <button type="button" class="px-md py-xs rounded-sm bg-transparent text-light-on-surface-subtle dark:text-dark-on-surface-subtle font-label text-label-md" data-design-text-token="label-md">Archived</button>
+          </div>
+        </div>
+
+        <!-- 2-Column Client Cards Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-lg items-stretch">
+          <article class="h-full bg-light-surface dark:bg-dark-surface border border-light-primary dark:border-dark-primary rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <div class="flex items-start justify-between gap-sm">
+              <div class="flex items-center gap-sm">
+                <span class="w-10 h-10 rounded-full bg-light-primary-container text-light-on-primary-container dark:bg-dark-primary-container dark:text-dark-on-primary-container flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">SC</span>
+                <div>
+                  <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Sarah Chen</h2>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">Northstar Logistics</p>
+                </div>
+              </div>
+              <span class="font-label text-label-sm bg-light-success-container text-light-on-success-container dark:bg-dark-success-container dark:text-dark-on-success-container px-sm py-xs rounded-full" data-design-text-token="label-sm">Active</span>
+            </div>
+            <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">sarah@northstar.io · 2 active projects</p>
+          </article>
+
+          <article class="h-full bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <div class="flex items-start justify-between gap-sm">
+              <div class="flex items-center gap-sm">
+                <span class="w-10 h-10 rounded-full bg-light-surface-subtle text-light-on-surface dark:bg-dark-surface-subtle dark:text-dark-on-surface flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">MV</span>
+                <div>
+                  <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Marcus Vance</h2>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">Verve Studio</p>
+                </div>
+              </div>
+              <span class="font-label text-label-sm bg-light-success-container text-light-on-success-container dark:bg-dark-success-container dark:text-dark-on-success-container px-sm py-xs rounded-full" data-design-text-token="label-sm">Active</span>
+            </div>
+            <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">marcus@vervestudio.co · 1 active project</p>
+          </article>
+
+          <article class="h-full bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <div class="flex items-start justify-between gap-sm">
+              <div class="flex items-center gap-sm">
+                <span class="w-10 h-10 rounded-full bg-light-surface-subtle text-light-on-surface dark:bg-dark-surface-subtle dark:text-dark-on-surface flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">EN</span>
+                <div>
+                  <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Elena Novak</h2>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">Kestrel Analytics</p>
+                </div>
+              </div>
+              <span class="font-label text-label-sm bg-light-warning-container text-light-on-warning-container dark:bg-dark-warning-container dark:text-dark-on-warning-container px-sm py-xs rounded-full" data-design-text-token="label-sm">On Hold</span>
+            </div>
+            <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">elena@kestrel.ai · 1 on-hold project</p>
+          </article>
+
+          <article class="h-full bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <div class="flex items-start justify-between gap-sm">
+              <div class="flex items-center gap-sm">
+                <span class="w-10 h-10 rounded-full bg-light-surface-subtle text-light-on-surface dark:bg-dark-surface-subtle dark:text-dark-on-surface flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">DP</span>
+                <div>
+                  <h2 class="font-title text-title-lg" data-design-text-token="title-lg">David Park</h2>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">Meridian Health</p>
+                </div>
+              </div>
+              <span class="font-label text-label-sm bg-light-surface-subtle text-light-on-surface-subtle dark:bg-dark-surface-subtle dark:text-dark-on-surface-subtle px-sm py-xs rounded-full" data-design-text-token="label-sm">Archived</span>
+            </div>
+            <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">dpark@meridianhealth.org · 1 completed</p>
+          </article>
+        </section>
+
+        <!-- Selected Client Details Card -->
+        <section class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-md p-xl shadow-sm flex flex-col gap-md">
+          <header class="flex items-center justify-between gap-md">
+            <div>
+              <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Sarah Chen — Details</h2>
+              <p class="font-body text-body-sm text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-sm">Northstar Logistics · +1 (415) 555-0142</p>
+            </div>
+            <div class="flex items-center gap-sm">
+              <button type="button" class="px-md py-xs min-h-9 rounded border border-light-border dark:border-dark-border font-label text-label-md" data-design-text-token="label-md">Edit</button>
+              <button type="button" class="px-md py-xs min-h-9 rounded border border-light-border dark:border-dark-border text-light-on-error-container dark:text-dark-on-error-container font-label text-label-md" data-design-text-token="label-md">Archive</button>
+            </div>
+          </header>
+          <p class="font-body text-body-md text-light-on-surface-subtle dark:text-dark-on-surface-subtle" data-design-text-token="body-md">Notes: Prefers weekly async Loom updates every Thursday. Net-14 payment terms in USD.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script>
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('fh-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    }
+    (function initTheme() {
+      try { if (localStorage.getItem('fh-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+    })();
+  </script>
+
+
+</body></html>

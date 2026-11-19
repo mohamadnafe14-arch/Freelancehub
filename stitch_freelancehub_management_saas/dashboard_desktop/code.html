@@ -1,0 +1,613 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — FreelanceHub</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-purple': '#6D5CE8',
+        'brand-purple-dark': '#8B7CF6',
+        'success': '#10B981',
+        'on-success': '#393939',
+        'warning': '#F59E0B',
+        'on-warning': '#0F172A',
+        'error': '#EF4444',
+        'on-error': '#1C1C1C',
+        'info': '#3B82F6',
+        'on-info': '#1E1E1E',
+        'light-background': '#F8FAFC',
+        'light-on-background': '#0F172A',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#0F172A',
+        'light-surface-subtle': '#F1F5F9',
+        'light-on-surface-subtle': '#627188',
+        'light-primary': '#6D5CE8',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#EEF2FF',
+        'light-on-primary-container': '#4338CA',
+        'light-border': '#E2E8F0',
+        'light-success-container': '#ECFDF5',
+        'light-on-success-container': '#065F46',
+        'light-warning-container': '#FFFBEB',
+        'light-on-warning-container': '#92400E',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-info-container': '#EFF6FF',
+        'light-on-info-container': '#1E40AF',
+        'dark-background': '#0F172A',
+        'dark-on-background': '#F8FAFC',
+        'dark-surface': '#1E293B',
+        'dark-on-surface': '#F8FAFC',
+        'dark-surface-subtle': '#283548',
+        'dark-on-surface-subtle': '#94A3B8',
+        'dark-primary': '#8B7CF6',
+        'dark-on-primary': '#0F172A',
+        'dark-primary-container': '#2E2759',
+        'dark-on-primary-container': '#DDD6FE',
+        'dark-border': '#334155',
+        'dark-success-container': '#064E3B',
+        'dark-on-success-container': '#A7F3D0',
+        'dark-warning-container': '#78350F',
+        'dark-on-warning-container': '#FDE68A',
+        'dark-error-container': '#7F1D1D',
+        'dark-on-error-container': '#FECACA',
+        'dark-info-container': '#1E3A8A',
+        'dark-on-info-container': '#BFDBFE',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '32px',
+        '3xl': '48px',
+      },
+      fontFamily: {
+        'display': ['"Wix Madefor Display"', 'sans-serif'],
+        'headline': ['"Wix Madefor Display"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['24px', { lineHeight: '32px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.15px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@500&amp;family=Wix+Madefor+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-background text-light-on-background font-body antialiased">
+  <div class="min-h-[1024px] flex" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Persistent Left Sidebar (~250px) -->
+    <aside class="hidden lg:flex w-[252px] shrink-0 bg-light-surface border-r border-light-border min-h-[1024px] flex-col justify-between p-lg" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="flex flex-col gap-xl">
+        <!-- Brand Mark & Wordmark -->
+        <div class="flex items-center gap-md px-sm pt-xs">
+          <div class="w-9 h-9 rounded bg-light-primary text-light-on-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;">workspaces</span>
+          </div>
+          <div class="min-w-0">
+            <span class="block font-headline text-headline-md leading-tight" data-design-text-token="headline-md">FreelanceHub</span>
+            <span class="block font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Business organized</span>
+          </div>
+        </div>
+
+        <!-- Primary Navigation -->
+        <div class="flex flex-col gap-lg">
+          <nav aria-label="Primary navigation" class="flex flex-col gap-xs">
+            <a href="#dashboard" aria-current="page" class="flex items-center gap-md px-md py-sm min-h-10 rounded bg-light-primary-container text-light-on-primary-container transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;">dashboard</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Dashboard</span>
+            </a>
+            <a href="#clients" class="flex items-center gap-md px-md py-sm min-h-10 rounded text-light-on-surface-subtle hover:bg-light-surface-subtle hover:text-light-on-surface transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-[20px]">group</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Clients</span>
+            </a>
+            <a href="#projects" class="flex items-center gap-md px-md py-sm min-h-10 rounded text-light-on-surface-subtle hover:bg-light-surface-subtle hover:text-light-on-surface transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-[20px]">folder_open</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Projects</span>
+            </a>
+            <a href="#tasks" class="flex items-center justify-between gap-md px-md py-sm min-h-10 rounded text-light-on-surface-subtle hover:bg-light-surface-subtle hover:text-light-on-surface transition-colors duration-state-change ease-state-change">
+              <span class="flex items-center gap-md">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                <span class="font-label text-label-lg" data-design-text-token="label-lg">Tasks</span>
+              </span>
+              <span data-component-id="badge-numeric" data-component-type="badge" data-component-variant="numeric" role="status" class="inline-flex items-center justify-center min-w-6 h-5 px-sm rounded-full bg-light-primary text-light-on-primary tabular-nums">
+                <span class="font-label text-label-sm" data-design-text-token="label-sm">12</span>
+              </span>
+            </a>
+            <a href="#finance" class="flex items-center gap-md px-md py-sm min-h-10 rounded text-light-on-surface-subtle hover:bg-light-surface-subtle hover:text-light-on-surface transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Finance</span>
+            </a>
+          </nav>
+
+          <!-- Settings Section -->
+          <div class="pt-md border-t border-light-border flex flex-col gap-xs">
+            <span class="px-md font-label text-label-sm text-light-on-surface-subtle" data-design-text-token="label-sm">Workspace</span>
+            <a href="#settings" class="flex items-center gap-md px-md py-sm min-h-10 rounded text-light-on-surface-subtle hover:bg-light-surface-subtle hover:text-light-on-surface transition-colors duration-state-change ease-state-change">
+              <span class="material-symbols-outlined text-[20px]">settings</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Settings</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Profile Area at Bottom -->
+      <div class="pt-md border-t border-light-border">
+        <a href="#profile" class="flex items-center gap-md p-sm rounded hover:bg-light-surface-subtle transition-colors duration-state-change ease-state-change">
+          <span class="w-9 h-9 rounded-full bg-light-primary-container text-light-on-primary-container flex items-center justify-center font-title text-title-md shrink-0" data-design-text-token="title-md">AM</span>
+          <div class="min-w-0 flex-1">
+            <span class="block font-title text-title-md leading-tight" data-design-text-token="title-md">Alex Morgan</span>
+            <span class="block font-body text-body-sm text-light-on-surface-subtle leading-tight truncate" data-design-text-token="body-sm">alex@freelancehub.io</span>
+          </div>
+          <span class="material-symbols-outlined text-[18px] text-light-on-surface-subtle shrink-0">unfold_more</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Column -->
+    <div class="flex-1 min-w-0 flex flex-col">
+      <!-- Top Header -->
+      <header class="sticky top-0 z-20 h-16 bg-light-surface border-b border-light-border px-lg lg:px-2xl flex items-center justify-between gap-lg">
+        <!-- Breadcrumb & Page Title -->
+        <div class="flex items-center gap-sm">
+          <span class="font-body text-body-md text-light-on-surface-subtle" data-design-text-token="body-md">Workspace</span>
+          <span class="material-symbols-outlined text-[16px] text-light-on-surface-subtle" aria-hidden="true">chevron_right</span>
+          <span class="font-title text-title-md text-light-on-surface" data-design-text-token="title-md">Dashboard</span>
+        </div>
+
+        <!-- Search + Notifications + User Dropdown -->
+        <div class="flex items-center gap-md">
+          <div class="hidden sm:block w-80">
+            <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="relative flex items-center">
+              <span class="material-symbols-outlined text-[18px] text-light-on-surface-subtle absolute left-md pointer-events-none" aria-hidden="true">search</span>
+              <input type="search" placeholder="Search projects, clients, tasks..." aria-label="Search FreelanceHub" class="w-full min-h-10 pl-2xl pr-md py-xs rounded bg-light-background text-light-on-surface border border-light-border placeholder:text-light-on-surface-subtle focus:border-light-primary focus:ring-1 focus:ring-light-primary focus:outline-none text-body-md">
+            </label>
+          </div>
+
+          <!-- Notification Bell -->
+          <button data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Notifications, 3 unread" class="relative inline-flex items-center justify-center w-10 h-10 rounded bg-light-surface text-light-on-surface-subtle border border-light-border hover:text-light-on-surface hover:bg-light-surface-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary transition-colors duration-state-change ease-state-change">
+            <span class="material-symbols-outlined text-[20px]">notifications</span>
+            <span data-component-id="badge-dot" data-component-type="badge" data-component-variant="dot" role="status" aria-hidden="true" class="absolute top-2 right-2 w-2 h-2 rounded-full bg-light-primary"></span>
+          </button>
+
+          <!-- User Profile Dropdown Trigger -->
+          <button type="button" aria-label="Alex Morgan profile menu" class="flex items-center gap-sm pl-xs pr-sm py-xs rounded hover:bg-light-surface-subtle transition-colors duration-state-change">
+            <span class="w-8 h-8 rounded-full bg-light-primary-container text-light-on-primary-container flex items-center justify-center font-title text-title-md" data-design-text-token="title-md">AM</span>
+            <span class="hidden md:block font-title text-title-md" data-design-text-token="title-md">Alex Morgan</span>
+            <span class="material-symbols-outlined text-[18px] text-light-on-surface-subtle">expand_more</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Workspace -->
+      <main class="flex-1 p-lg lg:p-2xl max-w-[1440px] w-full mx-auto flex flex-col gap-xl">
+        <!-- Welcome Section -->
+        <div class="flex flex-wrap items-center justify-between gap-md">
+          <div>
+            <h1 class="font-headline text-headline-lg" data-design-text-token="headline-lg">Good morning, Alex!</h1>
+            <p class="font-body text-body-md text-light-on-surface-subtle mt-xs" data-design-text-token="body-md">Here&#39;s what&#39;s happening with your freelance business today.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-md">
+            <button data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" type="button" class="inline-flex items-center justify-center gap-sm px-lg py-sm min-h-10 rounded bg-light-surface text-light-on-surface border border-light-border hover:bg-light-surface-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary transition-colors duration-state-change ease-state-change shrink-0">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">person_add</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Add Client</span>
+            </button>
+            <button data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" type="button" class="inline-flex items-center justify-center gap-sm px-lg py-sm min-h-10 rounded bg-light-primary text-light-on-primary hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary transition-colors duration-state-change ease-state-change shrink-0">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">add</span>
+              <span class="font-label text-label-lg" data-design-text-token="label-lg">Create Project</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4-Column KPI Cards -->
+        <section aria-label="Key business metrics" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg items-stretch">
+          <!-- KPI 1: Total Earnings -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface text-light-on-surface border border-light-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <header class="flex items-center justify-between gap-sm">
+              <h2 class="font-title text-title-md text-light-on-surface-subtle" data-design-text-token="title-md">USD Earnings (Nov)</h2>
+              <span class="w-8 h-8 rounded bg-light-primary-container text-light-on-primary-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">payments</span>
+              </span>
+            </header>
+            <p class="font-headline text-display-lg-mobile tabular-nums" data-design-text-token="display-lg-mobile">$4,850</p>
+            <div class="flex items-center gap-sm">
+              <span class="font-label text-label-sm bg-light-success-container text-light-on-success-container px-sm py-xs rounded-sm tabular-nums shrink-0" data-design-text-token="label-sm">+12.4%</span>
+              <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">vs. last month</span>
+            </div>
+          </article>
+
+          <!-- KPI 2: Outstanding Payments -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface text-light-on-surface border border-light-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <header class="flex items-center justify-between gap-sm">
+              <h2 class="font-title text-title-md text-light-on-surface-subtle" data-design-text-token="title-md">Outstanding Payments</h2>
+              <span class="w-8 h-8 rounded bg-light-warning-container text-light-on-warning-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+              </span>
+            </header>
+            <p class="font-headline text-display-lg-mobile tabular-nums" data-design-text-token="display-lg-mobile">$1,200</p>
+            <div class="flex items-center gap-sm">
+              <span class="font-label text-label-sm bg-light-warning-container text-light-on-warning-container px-sm py-xs rounded-sm tabular-nums shrink-0" data-design-text-token="label-sm">2 pending</span>
+              <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Due in 7 days</span>
+            </div>
+          </article>
+
+          <!-- KPI 3: Active Projects -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface text-light-on-surface border border-light-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <header class="flex items-center justify-between gap-sm">
+              <h2 class="font-title text-title-md text-light-on-surface-subtle" data-design-text-token="title-md">Active Projects</h2>
+              <span class="w-8 h-8 rounded bg-light-info-container text-light-on-info-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">folder_open</span>
+              </span>
+            </header>
+            <p class="font-headline text-display-lg-mobile tabular-nums" data-design-text-token="display-lg-mobile">7</p>
+            <div class="flex items-center gap-sm">
+              <span class="font-label text-label-sm bg-light-info-container text-light-on-info-container px-sm py-xs rounded-sm tabular-nums shrink-0" data-design-text-token="label-sm">4 in progress</span>
+              <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">2 due soon</span>
+            </div>
+          </article>
+
+          <!-- KPI 4: Pending Tasks -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface text-light-on-surface border border-light-border rounded-md p-lg shadow-sm flex flex-col justify-between gap-md">
+            <header class="flex items-center justify-between gap-sm">
+              <h2 class="font-title text-title-md text-light-on-surface-subtle" data-design-text-token="title-md">Pending Tasks</h2>
+              <span class="w-8 h-8 rounded bg-light-primary-container text-light-on-primary-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">task_alt</span>
+              </span>
+            </header>
+            <p class="font-headline text-display-lg-mobile tabular-nums" data-design-text-token="display-lg-mobile">12</p>
+            <div class="flex items-center gap-sm">
+              <span class="font-label text-label-sm bg-light-error-container text-light-on-error-container px-sm py-xs rounded-sm tabular-nums shrink-0" data-design-text-token="label-sm">2 overdue</span>
+              <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">4 due today</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- Analytics & Projects Overview Row (7:5) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-stretch">
+          <!-- Revenue Overview Chart (7 Cols) -->
+          <section class="lg:col-span-7 bg-light-surface border border-light-border rounded-md p-xl shadow-sm flex flex-col justify-between gap-lg">
+            <header class="flex flex-wrap items-center justify-between gap-md">
+              <div>
+                <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Revenue Overview</h2>
+                <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Monthly revenue for the last six months</p>
+              </div>
+              <div class="flex items-center gap-sm">
+                <label for="revenue-period" class="sr-only">Select revenue period</label>
+                <select id="revenue-period" class="min-h-9 px-md py-xs rounded bg-light-surface text-light-on-surface border border-light-border font-label text-label-md focus:border-light-primary focus:ring-1 focus:ring-light-primary focus:outline-none">
+                  <option value="6m" selected>Last 6 months</option>
+                  <option value="12m">Last 12 months</option>
+                  <option value="ytd">Year to date</option>
+                </select>
+              </div>
+            </header>
+
+            <!-- Chart with Y-Axis, Subtle Gridlines, Purple Series, and Tooltip-ready Bars -->
+            <div class="flex gap-md items-stretch pt-md">
+              <!-- Y-Axis Labels -->
+              <div class="flex flex-col justify-between text-right pr-xs pb-xl select-none">
+                <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">$6,000</span>
+                <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">$4,000</span>
+                <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">$2,000</span>
+                <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">$0</span>
+              </div>
+
+              <!-- Plot Area -->
+              <div class="flex-1 flex flex-col">
+                <div class="relative h-56 border-b border-light-border flex flex-col justify-between">
+                  <!-- Subtle Horizontal Gridlines -->
+                  <div class="w-full border-t border-dashed border-light-border"></div>
+                  <div class="w-full border-t border-dashed border-light-border"></div>
+                  <div class="w-full border-t border-dashed border-light-border"></div>
+                  <div></div>
+
+                  <!-- Bars Overlay -->
+                  <div class="absolute inset-0 grid grid-cols-6 gap-md items-end px-sm">
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-state-change mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums pointer-events-none" data-design-text-token="label-sm">$3,200</span>
+                      <div title="Jun 2026: $3,200" class="w-full max-w-10 h-[53%] rounded-t bg-light-primary-container hover:bg-light-primary transition-colors duration-state-change cursor-pointer"></div>
+                    </div>
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-state-change mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums pointer-events-none" data-design-text-token="label-sm">$3,850</span>
+                      <div title="Jul 2026: $3,850" class="w-full max-w-10 h-[64%] rounded-t bg-light-primary-container hover:bg-light-primary transition-colors duration-state-change cursor-pointer"></div>
+                    </div>
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-state-change mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums pointer-events-none" data-design-text-token="label-sm">$4,100</span>
+                      <div title="Aug 2026: $4,100" class="w-full max-w-10 h-[68%] rounded-t bg-light-primary-container hover:bg-light-primary transition-colors duration-state-change cursor-pointer"></div>
+                    </div>
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-state-change mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums pointer-events-none" data-design-text-token="label-sm">$3,600</span>
+                      <div title="Sep 2026: $3,600" class="w-full max-w-10 h-[60%] rounded-t bg-light-primary-container hover:bg-light-primary transition-colors duration-state-change cursor-pointer"></div>
+                    </div>
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-state-change mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums pointer-events-none" data-design-text-token="label-sm">$4,315</span>
+                      <div title="Oct 2026: $4,315" class="w-full max-w-10 h-[72%] rounded-t bg-light-primary-container hover:bg-light-primary transition-colors duration-state-change cursor-pointer"></div>
+                    </div>
+                    <div class="group relative flex flex-col items-center justify-end h-full">
+                      <span class="mb-xs px-sm py-xs rounded bg-light-on-surface text-light-surface font-label text-label-sm tabular-nums" data-design-text-token="label-sm">$4,850</span>
+                      <div title="Nov 2026: $4,850" class="w-full max-w-10 h-[81%] rounded-t bg-light-primary cursor-pointer"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- X-Axis Labels -->
+                <div class="grid grid-cols-6 gap-md text-center pt-sm">
+                  <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Jun</span>
+                  <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Jul</span>
+                  <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Aug</span>
+                  <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Sep</span>
+                  <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Oct</span>
+                  <span class="font-label text-label-md text-light-on-surface" data-design-text-token="label-md">Nov</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects Overview (5 Cols) -->
+          <section class="lg:col-span-5 bg-light-surface border border-light-border rounded-md p-xl shadow-sm flex flex-col gap-lg">
+            <header class="flex items-center justify-between gap-sm">
+              <div>
+                <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Projects Overview</h2>
+                <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Status distribution &amp; recent active work</p>
+              </div>
+              <a href="#projects" class="font-label text-label-md text-light-primary hover:underline shrink-0" data-design-text-token="label-md">View all</a>
+            </header>
+
+            <!-- Status Breakdown Visualization -->
+            <div class="flex flex-col gap-sm">
+              <div class="w-full h-2.5 rounded-full overflow-hidden flex gap-xs bg-light-surface-subtle">
+                <div class="h-full w-1/6 bg-info rounded-l-full" title="Planned: 2"></div>
+                <div class="h-full w-1/3 bg-light-primary" title="In Progress: 4"></div>
+                <div class="h-full w-1/12 bg-warning" title="On Hold: 1"></div>
+                <div class="h-full w-5/12 bg-success rounded-r-full" title="Completed: 5"></div>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-lg gap-y-xs">
+                <div class="flex items-center gap-xs">
+                  <span class="w-2 h-2 rounded-full bg-info shrink-0"></span>
+                  <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Planned (2)</span>
+                </div>
+                <div class="flex items-center gap-xs">
+                  <span class="w-2 h-2 rounded-full bg-light-primary shrink-0"></span>
+                  <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">In Progress (4)</span>
+                </div>
+                <div class="flex items-center gap-xs">
+                  <span class="w-2 h-2 rounded-full bg-warning shrink-0"></span>
+                  <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">On Hold (1)</span>
+                </div>
+                <div class="flex items-center gap-xs">
+                  <span class="w-2 h-2 rounded-full bg-success shrink-0"></span>
+                  <span class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Completed (5)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compact List of Recent Active Projects -->
+            <div class="flex flex-col divide-y divide-light-border">
+              <div class="py-md flex flex-col gap-xs">
+                <div class="flex items-center justify-between gap-sm">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">Northstar Mobile v2</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Northstar Logistics · Due Nov 28</p>
+                  </div>
+                  <span class="font-label text-label-sm bg-light-primary-container text-light-on-primary-container px-sm py-xs rounded-full shrink-0" data-design-text-token="label-sm">In Progress</span>
+                </div>
+                <div class="flex items-center gap-sm">
+                  <div class="flex-1 h-1.5 rounded-full bg-light-surface-subtle overflow-hidden">
+                    <div class="h-full w-3/4 rounded-full bg-light-primary"></div>
+                  </div>
+                  <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">75%</span>
+                </div>
+              </div>
+
+              <div class="py-md flex flex-col gap-xs">
+                <div class="flex items-center justify-between gap-sm">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">Brand Refresh 2.0</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Verve Studio · Due Dec 05</p>
+                  </div>
+                  <span class="font-label text-label-sm bg-light-info-container text-light-on-info-container px-sm py-xs rounded-full shrink-0" data-design-text-token="label-sm">Planned</span>
+                </div>
+                <div class="flex items-center gap-sm">
+                  <div class="flex-1 h-1.5 rounded-full bg-light-surface-subtle overflow-hidden">
+                    <div class="h-full w-1/5 rounded-full bg-info"></div>
+                  </div>
+                  <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">20%</span>
+                </div>
+              </div>
+
+              <div class="py-md flex flex-col gap-xs">
+                <div class="flex items-center justify-between gap-sm">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">API Portal Integration</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Kestrel Analytics · Due Dec 12</p>
+                  </div>
+                  <span class="font-label text-label-sm bg-light-warning-container text-light-on-warning-container px-sm py-xs rounded-full shrink-0" data-design-text-token="label-sm">On Hold</span>
+                </div>
+                <div class="flex items-center gap-sm">
+                  <div class="flex-1 h-1.5 rounded-full bg-light-surface-subtle overflow-hidden">
+                    <div class="h-full w-1/2 rounded-full bg-warning"></div>
+                  </div>
+                  <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">50%</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Bottom Row: Upcoming Tasks (7 Cols) + Recent Activity (5 Cols) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+          <!-- Upcoming Tasks (7 Cols) -->
+          <section class="lg:col-span-7 bg-light-surface border border-light-border rounded-md p-xl shadow-sm flex flex-col gap-lg">
+            <header class="flex items-center justify-between gap-sm">
+              <div>
+                <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Upcoming Tasks</h2>
+                <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Prioritized deliverables across active projects</p>
+              </div>
+              <a href="#tasks" class="font-label text-label-md text-light-primary hover:underline shrink-0" data-design-text-token="label-md">All tasks</a>
+            </header>
+
+            <ul class="flex flex-col gap-sm">
+              <!-- Overdue Task (calm, distinguishable pill) -->
+              <li class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-md p-md rounded bg-light-surface-subtle border border-light-border">
+                <div class="flex items-center gap-md min-w-0">
+                  <input type="checkbox" aria-label="Mark Checkout flow QA complete" class="w-4 h-4 rounded-sm border-light-border text-light-primary focus:ring-light-primary shrink-0">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">Checkout flow QA</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Northstar Mobile v2</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-sm shrink-0">
+                  <span class="font-label text-label-sm bg-light-warning-container text-light-on-warning-container px-sm py-xs rounded-sm" data-design-text-token="label-sm">High</span>
+                  <span class="font-label text-label-sm bg-light-error-container text-light-on-error-container px-sm py-xs rounded-sm tabular-nums" data-design-text-token="label-sm">Overdue · Nov 17</span>
+                </div>
+              </li>
+
+              <!-- Due Today -->
+              <li class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-md p-md rounded border border-light-border">
+                <div class="flex items-center gap-md min-w-0">
+                  <input type="checkbox" aria-label="Mark Send Q4 retainer invoice complete" class="w-4 h-4 rounded-sm border-light-border text-light-primary focus:ring-light-primary shrink-0">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">Send Q4 retainer invoice</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Brand Refresh 2.0</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-sm shrink-0">
+                  <span class="font-label text-label-sm bg-light-surface-subtle text-light-on-surface-subtle px-sm py-xs rounded-sm" data-design-text-token="label-sm">Medium</span>
+                  <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">Today</span>
+                </div>
+              </li>
+
+              <!-- Upcoming -->
+              <li class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-md p-md rounded border border-light-border">
+                <div class="flex items-center gap-md min-w-0">
+                  <input type="checkbox" aria-label="Mark API schema review complete" class="w-4 h-4 rounded-sm border-light-border text-light-primary focus:ring-light-primary shrink-0">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md" data-design-text-token="title-md">API schema review</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">API Portal Integration</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-sm shrink-0">
+                  <span class="font-label text-label-sm bg-light-surface-subtle text-light-on-surface-subtle px-sm py-xs rounded-sm" data-design-text-token="label-sm">Low</span>
+                  <span class="font-label text-label-sm text-light-on-surface-subtle tabular-nums" data-design-text-token="label-sm">Nov 24</span>
+                </div>
+              </li>
+
+              <!-- Completed -->
+              <li class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-md p-md rounded border border-light-border">
+                <div class="flex items-center gap-md min-w-0">
+                  <input type="checkbox" checked aria-label="Wireframe user onboarding completed" class="w-4 h-4 rounded-sm border-light-border text-light-primary focus:ring-light-primary shrink-0">
+                  <div class="min-w-0">
+                    <p class="font-title text-title-md line-through text-light-on-surface-subtle" data-design-text-token="title-md">Wireframe user onboarding</p>
+                    <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Northstar Mobile v2</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-sm shrink-0">
+                  <span class="font-label text-label-sm bg-light-success-container text-light-on-success-container px-sm py-xs rounded-sm" data-design-text-token="label-sm">Done</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Recent Activity (5 Cols) -->
+          <section class="lg:col-span-5 bg-light-surface border border-light-border rounded-md p-xl shadow-sm flex flex-col gap-lg">
+            <header class="flex items-center justify-between gap-sm">
+              <h2 class="font-title text-title-lg" data-design-text-token="title-lg">Recent Activity</h2>
+              <span class="font-label text-label-md text-light-on-surface-subtle" data-design-text-token="label-md">Last 48 hours</span>
+            </header>
+
+            <ul class="flex flex-col gap-md">
+              <li class="flex items-start gap-md">
+                <span class="w-8 h-8 rounded bg-light-primary-container text-light-on-primary-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">create_new_folder</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="font-body text-body-md" data-design-text-token="body-md">New project created: Brand Refresh 2.0</p>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Verve Studio · 2 hours ago</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-md">
+                <span class="w-8 h-8 rounded bg-light-success-container text-light-on-success-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">payments</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="font-body text-body-md" data-design-text-token="body-md">Payment received: $1,650.00</p>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Northstar Logistics · 5 hours ago</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-md">
+                <span class="w-8 h-8 rounded bg-light-info-container text-light-on-info-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="font-body text-body-md" data-design-text-token="body-md">Task completed: Wireframe user onboarding</p>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">Northstar Mobile v2 · Yesterday</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-md">
+                <span class="w-8 h-8 rounded bg-light-warning-container text-light-on-warning-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">sync</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="font-body text-body-md" data-design-text-token="body-md">Project status updated to On Hold</p>
+                  <p class="font-body text-body-sm text-light-on-surface-subtle" data-design-text-token="body-sm">API Portal Integration · Nov 17</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+</body></html>
