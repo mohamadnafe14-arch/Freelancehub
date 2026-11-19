@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:freelancehub/core/theme/app_colors.dart';
 import 'package:freelancehub/core/theme/app_theme.dart';
+import 'package:freelancehub/core/router/app_router.dart';
 import 'package:freelancehub/main.dart';
 
 void main() {
@@ -35,7 +36,10 @@ void main() {
     });
 
     testWidgets('app uses the system theme mode by default', (tester) async {
-      await tester.pumpWidget(const MyApp());
+      final router = createAppRouter();
+      addTearDown(router.dispose);
+
+      await tester.pumpWidget(MyApp(router: router));
 
       final app = tester.widget<MaterialApp>(find.byType(MaterialApp));
 

@@ -9,7 +9,10 @@ void main() {
   testWidgets('initial route displays the existing home screen', (
     tester,
   ) async {
-    await tester.pumpWidget(const MyApp());
+    final router = createAppRouter();
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(MyApp(router: router));
 
     expect(find.text('Flutter Demo Home Page'), findsOneWidget);
     expect(find.text('0'), findsOneWidget);

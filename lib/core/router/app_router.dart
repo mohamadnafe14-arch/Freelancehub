@@ -15,5 +15,3 @@ GoRouter createAppRouter({String initialLocation = AppRoutePaths.home}) {
     ],
   );
 }
-
-final GoRouter appRouter = createAppRouter();

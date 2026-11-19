@@ -1,7 +1,8 @@
 import 'package:freelancehub/core/config/supabase_client_config.dart';
-import 'package:freelancehub/core/router/app_router.dart';
+import 'package:freelancehub/core/di/service_locator.dart';
 import 'package:freelancehub/core/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -13,11 +14,14 @@ void main() async {
     url: SupabaseClientConfig.supabaseUrl,
     publishableKey: SupabaseClientConfig.publishableKey,
   );
-  runApp(const MyApp());
+  configureDependencies();
+  runApp(MyApp(router: getIt<GoRouter>()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({required this.router, super.key});
+
+  final GoRouter router;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: AppTheme.defaultThemeMode,
-      routerConfig: appRouter,
+      routerConfig: router,
     );
   }
 }
